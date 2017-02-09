@@ -1,0 +1,54 @@
+{# empty Twig template #}
+{% extends '/gallery/base_gallery.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styleContact.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }} 
+    <div style="width:800px; margin:0 auto;" class="container page-text">
+        <div class="row">
+            <div class="col-lg-6" style="margin-top: 80px">
+                <p>  e-MAIL : ivan_kocic@yahoo.com</p>
+                <br>
+                <p> tel : (+381) 64 34 64 641</p>
+                <br>
+                <a href="https://www.facebook.com/ivan.kocic.395?fref=ts"><img class="img-thumbnail" src="{{ asset('img1/facebook.jpg')}}" alt="facebook" style= "height:50px; width:50px"/></a>
+            </div>    
+            <div class="col-lg-6">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>  
+        </div>    
+        {# OLD CODE 1
+        <table style="margin: 25px">
+            <tr>
+                <td style="align: right; width: 50%" class="page-text" >
+                    <p>  e-MAIL : ivan_kocic@yahoo.com</p>
+                    <p> tel : (+381) 64 34 64 641</p>
+                    <a href="https://www.facebook.com/ivan.kocic.395?fref=ts"><img src="{{ asset('img1/facebook.jpg')}}" alt="facebook" style= "height:50px; width:50px"/></a>
+                </td>
+                <td style="width: 50%" class="page-text" >
+                    <!--
+                    <form>      
+                        <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+                        <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                        <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                        <input type="submit" value="SUBMIT"/>
+                    </form>
+                    -->
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                    
+                </td>
+            </tr>
+        </table>    
+        OLD CODE #}
+    </div>
+{% endblock %}
+

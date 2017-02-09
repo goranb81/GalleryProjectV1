@@ -1,0 +1,52 @@
+{# empty Twig template #}
+
+{% extends '/gallery/base_gallery.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styleTemplate.css') }}" />
+{% endblock %}
+
+{# {% block body %} #}
+
+{# {{ parent() }} #}
+
+
+{% block third %}
+    {{ parent() }}
+    <div class="container">
+        <div class="row">
+            <div style="padding-top: 185px; font-size: 125%;" class="col-md-6 page-text text-center ">
+                <br /><br /><br /> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dobar crte&#382; ima velike &scaron;anse&nbsp;<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; da postane dobra slika,<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lo&scaron; nema skoro nikakve..<br /><br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Good drawing has big chance<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of becoming great painting,<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bad one has&nbsp;almost none..&nbsp;&nbsp;
+            </div>    
+            <div style=" padding-top: 185px;" class="col-md-6 ">
+                <a><img  src="{{ asset('img1/home.jpg') }}" style=" width:auto; height:auto; margin-top: 10px; margin-bottom: 10px; margin-left: 0; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" class="galleryImageBorder img-thumbnail" />  </a>
+            </div>    
+        </div>
+    </div>
+{% endblock%}
+
+
+
+
+{#
+ <div>
+     <table class="page-text" style=" position:relative; margin-left:180px ; margin-top:70px">
+         <tbody>
+             <tr>
+                 <td  style='width:50%;padding:0 5px'>
+
+                     <div  style="text-align:left; "><br /><br /><br /> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dobar crte&#382; ima velike &scaron;anse&nbsp;<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; da postane dobra slika,<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lo&scaron; nema skoro nikakve..<br /><br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Good drawing has big chance<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of becoming great painting,<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bad one has&nbsp;almost none..&nbsp;&nbsp;</div>
+
+                 </td>
+
+                 <td  style='width:50%;padding:0 5px;'>
+
+                     <div><div style="text-align: left;"><a><img src="{{ asset('img1/home.jpg') }}" style=" width:auto; height:auto; margin-top: 10px; margin-bottom: 10px; margin-left: 0; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" class="galleryImageBorder" />  </a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px;"></div></div></div>
+
+                 </td>
+             </tr>
+         </tbody>
+     </table>
+ </div> #}
+{# {% endblock %} #}

@@ -1,0 +1,24 @@
+{# empty Twig template #}
+{% extends '/testBootstrap/testBootstrapBase.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    {# <h1 class="text-primary">Hello, world!</h1> #}
+    
+    <div class="container">
+        <div class="row">
+            <img src="{{ asset('img1/facebook.jpg') }}" class="col-md-4 col-md-offset-4 img-responsive"/>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="customDiv">Column1</div>
+            </div>    
+            <div class="col-md-4">
+                 <div class="customDiv">Column2</div>
+            </div>
+            <div class="col-md-4">
+                <div class="customDiv">Column3</div>
+            </div>    
+        </div>
+    </div>    
+{% endblock %}    

@@ -1,0 +1,26 @@
+{# empty Twig template #}
+{% extends 'gallery/admin/edit_exhibitions.html.twig' %}
+
+{% block third %}
+    
+
+    <div>
+        <h3 class="page-text">Izaberi izlozbu za unos/brisanje slika</h3>
+
+        <table class="page-text table" style="width:100%; margin-left: 50px; margin-top: 50px">
+            {% for exhibition in exhibitionsList %}
+                <tr>
+                    <td class="tabledata">
+                        {{exhibition.datetime1 | date('d-m-Y')}}
+                    </td>
+                    <td class="tabledata1">
+                        <a href='/GalleryProjectV1/web/admin/editgallery/{{ exhibition.name }}' class="page-text1" >{{ exhibition.name }}</a>
+                    </td >  
+                </tr>
+            {% endfor%}
+        </table>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,146 @@
+{# empty Twig template #}
+{% extends '/gallery/base_gallery.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock stylesheets %}
+
+{% block body %}
+    {{ parent()}}
+
+    
+    <div style="position: relative" class="page-text" class="container">
+
+        {% for video in videosList %}
+            <div class="imgContainer" style="margin-left: 50px; margin-top: 50px; margin-right: 50px; margin-bottom: 50px" >    
+                <p style="margin: 5px"> GOST: {{ video.guest }}</p><!-- Ljiljana Blagojevic -->
+                <iframe 
+                    width="420" height="315"
+                    src="http://www.youtube.com/embed/{{ video.videoId }}?autoplay=0&autohide=1&controls=1"
+                    allowfullscreen="allowfullscreen">
+                </iframe>
+            </div>
+        {% endfor %}    
+
+        <!--
+        <div class="imgContainer" style="margin-left: 50px; margin-top: 50px; margin-right: 50px; margin-bottom: 50px">
+            <p style="margin: 5px"> GOST: Iva Strljic</p>
+            <iframe 
+                width="420" height="315"
+                src="http://www.youtube.com/embed/QgWbwBwMTEg?autoplay=0&autohide=1&controls=1"
+                allowfullscreen="allowfullscreen">
+            </iframe>
+        </div>
+        -->
+
+    </div>
+    
+
+    {# Kod za LightGallery koji nisam uspeo da namestim
+        <div id="video-gallery" >
+            {% for video in videosList %}
+
+                
+                <iframe 
+                    width="420" height="315"
+                    src="http://www.youtube.com/embed/{{ video.videoId }}?autoplay=0&autohide=1&controls=1"
+                    allowfullscreen="allowfullscreen">
+                </iframe>
+                
+
+                <a href="https://www.youtube.com/watch?v={{ video.videoId }}" >
+                     <img src="img/thumb1.jpg" /> 
+                </a>
+
+            {% endfor %} 
+        </div>
+    Kod za LightGallery koji nisam uspeo da namestim #}
+        
+    <!-- Nenad Nenadovic -->
+    <!-- https://www.youtube.com/watch?v=qvQ5OEgmVLA&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=15 -->
+
+    <!-- Stojan Djordjevic -->
+    <!-- https://www.youtube.com/watch?v=n34MYiXRNdI&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=14 -->
+
+    <!-- Rasa Popov -->
+    <!-- https://www.youtube.com/watch?v=PFfcua-LTR4&index=13&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Jovan Memedovic -->
+    <!-- https://www.youtube.com/watch?v=nYBA_ux8q-U&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=12 -->
+
+    <!-- Mikica Petronijevic -->
+    <!-- https://www.youtube.com/watch?v=gzadQiLv6jA&index=11&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Zarko Kovacevic -->
+    <!-- https://www.youtube.com/watch?v=NHvCj32LkbA&index=10&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Neda Arneric -->
+    <!-- https://www.youtube.com/watch?v=ZqYGBT5oAyg&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=9 -->
+
+    <!-- Mima Karadzic -->
+    <!-- https://www.youtube.com/watch?v=K91Z9pq9ADI&index=8&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Tamara Dragicevic -->
+    <!-- https://www.youtube.com/watch?v=tnkKezIEG1M&index=7&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Ljubivoje Rsumovic -->
+    <!-- https://www.youtube.com/watch?v=NEjyn-J8AlM&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=6 -->
+
+    <!-- Vlasta Velisavljevic -->
+    <!-- https://www.youtube.com/watch?v=IEgbrYYR0oE&index=5&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Milan Antonic -->
+    <!-- https://www.youtube.com/watch?v=_q0KmnmQzqo&index=4&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw -->
+
+    <!-- Nebojisa Dugalic -->
+    <!-- https://www.youtube.com/watch?v=OzmS4CGw-hg&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=3 -->
+
+    <!-- Vladan Dujovic -->
+    <!-- https://www.youtube.com/watch?v=1oqSsLb05aE&list=PL2OceIYPRsCMwLz1qLtCn3pQbRiUkkzfw&index=2 -->
+
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery version must be >= 1.8.0; -->
+    {# Kod za LightGallery koji nisam uspeo da namestim
+    <script src="{{ asset('js/jquery-1.8.0.min.js') }}"></script>
+    <script src="{{ asset('js/lightgallery.min.js') }}"></script>
+
+    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+    <!-- lightgallery plugins -->
+    <script src="{{ asset('js/lg-thumbnail.min.js') }}"></script>
+    <script src="{{ asset('js/lg-fullscreen.min.js') }}"></script>
+    <script src="{{ asset('js/lg-video.js') }}"></script>
+
+    <script type="text/javascript">
+
+
+
+
+
+
+        $('#video-gallery').lightGallery({
+            loadYoutubeThumbnail: true,
+            youtubeThumbSize: 5
+        });
+
+
+    </script>
+    Kod za LightGallery koji nisam uspeo da namestim #}
+{% endblock %}

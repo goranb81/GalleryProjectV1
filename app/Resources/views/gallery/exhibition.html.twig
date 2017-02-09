@@ -1,0 +1,118 @@
+{# empty Twig template #}
+{% extends '/gallery/base_gallery.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    {{parent()}}
+
+    <div>
+        <table class="page-text table" style="width:100%; margin-left: 50px; margin-top: 50px">
+            {% set i= 0%}
+            {% for exhibition in exhibitionsList%}
+                {% set i=i+1 %}
+                <tr>
+                    <td class="tabledata">
+                        {{exhibition.datetime1 | date('d-m-Y')}}
+                    </td>
+                    <td class="tabledata1">
+                        <a href='/GalleryProjectV1/web/gallery/{{ exhibition.name }}' class="page-text1" >{{ exhibition.name }}</a>
+                    </td >  
+                    <td class="tabledata1">
+                        <button  type="button" style="color: #ffffff" class="btn btn-link" data-id="{{ exhibition.id }}">kratki opis</button> 
+                        {# data-target="#myModal" data-toggle="modal"#}
+                        {#<a href="leanModal" id="trigger_id" style="color: #ffffff" data-id="{{ exhibition.id }}">kratki opis</a>#}
+                        {# <p  style="color: #ffffff"  data-id="{{ exhibition.id }}">kratki opis</p> #}
+                        {# <a id="go" name="dialog" href="#dialog" style="color: #ffffff" data-id="{{ exhibition.id }}">kratki opis</a> #}
+                    </td>  
+                </tr>
+            {% endfor%}
+        </table>
+    </div>
+
+    <!-- Modal dialog box-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {# <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> #}
+                    <h4 class="modal-title" id="myModalLabel">Opis izlozbe</h4>
+                </div>
+                <div id="content" class="modal-body">
+                    ...
+                </div>
+
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+
+                // Using the core $.ajax() method
+                $.ajax({
+                    // The URL for the request
+                    url: "{{path('exhibitionajax')}}",
+                    // The data to send (will be converted to a query string)
+                    data: {
+                        id: $(this).attr("data-id")
+                    },
+                    // Whether this is a POST or GET request
+                    type: "POST",
+                    // The type of data we expect back
+                    dataType: "json"
+                })
+                        // Code to run if the request succeeds (is done);
+                        // The response is passed to the function
+                        .done(function (json) {
+                                document.getElementById("content").innerHTML = json.message;
+                                $('#myModal').modal()
+                            })
+                            // Code to run if the request fails; the raw request and
+                            // status codes are passed to the function
+
+                            .fail(function (xhr, status, errorThrown) {
+                                alert("Sorry, there was a problem!");
+                                console.log("Error: " + errorThrown);
+                                console.log("Status: " + status);
+                                console.dir(xhr);
+                            });
+                    // Code to run regardless of success or failure;
+        {#
+         .always(function (xhr, status) {
+         alert("The request is complete!");
+          });
+        #}
+                });
+            });
+
+        {# $("#go").leanModal(); #}
+
+         {#
+        $.post({
+            type: 'POST',
+            url: "{{path('exhibitionajax')}}",
+            data: { id: $(this).attr("data-id")},
+            success: function (json) {
+                alert(JSON.stringify(json));
+            },
+            dataType: "json"
+        });
+        #}  
+
+
+    </script>
+{% endblock %}
+

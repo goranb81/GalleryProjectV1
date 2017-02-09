@@ -1,0 +1,30 @@
+{# empty Twig template #}
+
+{% extends '/gallery/base_gallery.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styleTemplate.css') }}" />
+{% endblock %}
+
+{# {% block body %} #}
+
+{# {{ parent() }} #}
+
+
+{% block third %}
+    {{ parent() }}
+    <div class="container">
+        <div class="row">  
+            <div style=" padding-top: 185px; text-align: right" class="col-md-4 ">
+                <a class="right"><img  src="{{ asset('img1/about.jpg') }}" style=" width:auto; height:auto; margin-top: 10px; margin-bottom: 10px; margin-left: 0; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" class="galleryImageBorder img-thumbnail" />  </a>
+            </div> 
+            <div style="padding-top: 185px; font-size: 125%;" class="col-md-4 page-text  ">
+                 &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IVAN &nbsp; KOCI&#262; &nbsp;<br />&nbsp;&nbsp; &nbsp; Ro&#273;en je u Trsteniku 1982.god.<br />&nbsp;&nbsp; &nbsp; Zavr&scaron;io studije zidnog slikarstva<br />&nbsp;&nbsp; &nbsp; na Fakultetu Primenjenih Umetnosti<br />&nbsp;&nbsp; &nbsp; u Beogradu kao student generacije<br />&nbsp;&nbsp; &nbsp; za 2006.god.<br />&nbsp;&nbsp; &nbsp; Imao nekoliko samostalnih i vi&scaron;e&nbsp;<br />&nbsp;&nbsp; &nbsp; kolektivnih izlo&#382;bi.Tako&#273;e izveo&nbsp;<br />&nbsp;&nbsp; &nbsp; ve&#263;i broj intervencija u prostoru:<br />&nbsp;&nbsp; &nbsp; murala na fasadama javnih zgrada,<br />&nbsp;&nbsp; &nbsp; freskopisa i mozaika.<br />&nbsp;&nbsp; &nbsp; Od 2006. &#269;lan je ULUS-a a od 2011.<br />&nbsp;&nbsp; &nbsp; ULUPUDS-a.<br />&nbsp;&nbsp; &nbsp; &#381;ivi i stvara u Beogradu
+            </div> 
+            <div style="padding-top: 185px; font-size: 125%;" class="col-md-4 page-text  ">
+                &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IVAN &nbsp;KOCICH&nbsp;<br />&nbsp;&nbsp; &nbsp;Born in Trstenik in 1982.<br />&nbsp;&nbsp; &nbsp;Finished studies of wall painting<br />&nbsp;&nbsp; &nbsp;on Academy of Applied Arts in Belgrade<br />&nbsp;&nbsp; &nbsp;as the best student for year 2006.<br />&nbsp;&nbsp; &nbsp;Had several solo and a number of group<br />&nbsp;&nbsp; &nbsp;exhibitions.Also he has produced large&nbsp;<br />&nbsp;&nbsp; &nbsp;number of wall paintings and interventions:<br />&nbsp;&nbsp; &nbsp;murals,frescoes and mosaics on public&nbsp;<br />&nbsp;&nbsp; &nbsp;buildings.<br />&nbsp;&nbsp; &nbsp;He is member of Serbian Artist Association.<br />&nbsp;&nbsp; &nbsp;Lives and works in Belgrade(Serbia).&nbsp;
+            </div>
+        </div>
+    </div>
+{% endblock%}

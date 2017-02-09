@@ -1,0 +1,122 @@
+{# empty Twig template #}
+{% extends 'gallery/admin/edit_exhibitions.html.twig' %}
+
+
+{% block third %}
+
+    <div>
+        <h3 class="page-text">Unesi novu izlozbu</h3>
+        <br>
+        <p class="page-text" style="margin-left: 20px"> {{ resultMessage }} </p>
+        <div class="container">
+            <form method="post" style="padding: 10px;border-style: groove;">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <label style="margin: 4px" class="page-text">Unesi datum: </label>
+                        <input style="margin: 4px" class="form-control" type="date" name="exh_date"><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label style="margin: 4px" class="page-text">Unesi ime: </label>
+                        <input style="margin: 4px" class="form-control" type="text" name="fname"><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label style="margin: 4px" class="page-text">Opis izlozbe: </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <textarea style="margin: 4px" class="form-control" rows=15 cols=100 name="description">	
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <input style="margin: 4px" class="form-control" type="submit" name="new-exhibition" value="kreiraj izlozbu"> 
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div>
+        <h3 class="page-text">Izbrisi izlozbu</h3>
+
+        <table class="page-text table" style="width:100%; margin-left: 50px; margin-top: 50px">
+            {% for exhibition in exhibitionsList%}
+
+                <tr>
+                <form method="post"> 
+                    <td class="tabledata">
+                        {{exhibition.datetime1 | date('d-m-Y')}}
+                    </td>
+                    <td class="tabledata1">
+                        <p id="name1"> {{ exhibition.name }} </p>
+                    </td >  
+                    <td class="tabledata1">
+                        <input type="text" value= "{{ exhibition.id }}" name="id" hidden>
+                    </td> 
+                    <td class="tabledata1">
+                        <input class="form-control" type="submit" name="del-exhibition" value="izbrisi izlozbu"> 
+                    </td>
+
+                </form>
+
+                </tr>
+            {% endfor%}
+        </table>
+    </div>
+
+    {#
+    <div>
+        <h3 class="page-text">Unesi novu izlozbu</h3>
+        <p class="page-text"> {{ resultMessage }} </p>
+        <form method="post">
+            <label class="page-text">Unesi datum: </label>
+            <input type="date" name="exh_date"><br>
+            <label class="page-text">Unesi ime: </label>
+            <input type="text" name="fname"><br>
+
+            <label class="page-text">Opis izlozbe: </label>
+            <textarea rows=15 cols=100 name="description">	
+            </textarea>
+            <input type="submit" name="new-exhibition" value="kreiraj izlozbu"> 
+        </form>
+
+    </div>
+
+    <div>
+        <h3 class="page-text">Izbrisi izlozbu</h3>
+
+        <table class="page-text" style="width:100%; margin-left: 50px; margin-top: 50px">
+            {% for exhibition in exhibitionsList%}
+                <tr>
+                <form method="post">
+                    <td class="tabledata">
+                        {{exhibition.datetime1 | date('d-m-Y')}}
+                    </td>
+                    <td class="tabledata1">
+                        <p id="name1"> {{ exhibition.name }} </p>
+                    </td >  
+                    <td class="tabledata1">
+                        <input type="text" value= "{{ exhibition.id }}" name="id" hidden>
+                    </td> 
+                    <td class="tabledata1">
+                        <input type="submit" name="del-exhibition" value="izbrisi izlozbu"> 
+                    </td>
+                </form>
+
+                </tr>
+            {% endfor%}
+        </table>
+    </div>
+    #}
+
+
+{% endblock %}

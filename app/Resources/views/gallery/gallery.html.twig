@@ -1,0 +1,123 @@
+{# empty Twig template #}
+{% extends '/gallery/base_gallery.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {# kod koji se koristi pre uvodjenja bootstrap-a 
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/south-street/jquery-ui.css" id="theme">
+    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    kod koji se koristi pre uvodjenja bootstrap-a #}
+
+    {# kod koji se koristi sa bootstrap-om #}
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery.css') }}" />
+    
+
+    {# kod koji se koristi sa bootstrap-om #}
+
+{% endblock %}
+
+{% block body %}
+    {{parent()}}
+
+    {# kod pre uvodjenja bootstrap-a
+   <div id="blueimp-gallery-dialog" data-show="fade" data-hide="fade">
+       The gallery widget  
+       <div class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
+           <div class="slides"></div>
+           <a class="prev">‹</a>
+           <a class="next">›</a>
+           <a class="play-pause"></a>
+       </div>
+   </div>
+    kod pre uvodjenja bootstrap-a #} 
+
+    {# kod pre uvodjenja bootstrap-a
+     <div id='links' style="position: relative"> 
+         {% for picture in pictures %}
+            <div class="imgContainer" style="margin: 40px"> 
+            <a href=" {{ asset(picture.name) }}"  title = " {{ picture.title }} " data-dialog>
+                 <img src=" {{ asset(picture.thumbleName) }} " alt = " {{ picture.title }} " style=" margin: 5px; " height="200" width="200">
+             </a>
+             </div>
+         {% endfor %}    
+     </div>
+     kod pre uvodjenja bootstrap-a #} 
+
+    {# kod koji se koristi sa bootstrap-om 
+    <div class="container">
+        <div class="row">
+            {% for picture in pictures %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href=" {{ asset(picture.name) }} " title = " {{ picture.title }} " class="thumbnail">
+                        <p>{{ picture.title }}</p>
+                        <img src="{{ asset(picture.thumbleName) }}" style=" margin: 5px; " height="200" width="200"/>
+                    </a>
+                </div> 
+            {% endfor %}
+        </div>    
+    </div>
+     kod koji se koristi sa bootstrap-om #}  
+
+    {# kod koji se koristi sa jquery lightgallery  #}
+    <div id="lightgallery" class="container" style="margin-top: 33px">
+        {% for picture in pictures %}
+            <a href=" {{ asset(picture.name) }} " class="col-lg-3 col-md-4 col-sm-6">  
+                <img src="{{ asset(picture.thumbleName) }}" style=" margin: 5px; " height="200" width="200"  class="thumbnail"/>
+            </a>                
+        {% endfor %}
+    </div>      
+    {# kod koji se koristi sa jquery lightgallery #} 
+    
+     
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+    {# kod koji se koristi pre uvodjenja bootstrap-a ++++++++++++++++++++++++++++++++++++++++++
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+    <script src='//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js'></script>
+    <script src="{{ asset('js/jquery.image-gallery.min.js') }}"></script>
+    kod koji se koristi pre uvodjenja bootstrap-a +++++++++++++++++++++++++++++++++++++++++++++#}
+
+    
+    
+    {# KOD KOJI SE ODNOSI NA LIGHTGALLERY------------------------------------------ #}
+    <!-- jQuery version must be >= 1.8.0; -->
+    <script src="{{ asset('js/jquery-1.8.0.min.js') }}"></script>
+    <script src="{{ asset('js/lightgallery.min.js') }}"></script>
+
+    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+    <!-- lightgallery plugins -->
+    <script src="{{ asset('js/lg-thumbnail.min.js') }}"></script>
+    <script src="{{ asset('js/lg-fullscreen.min.js') }}"></script>
+
+    <script type="text/javascript">       
+        
+        
+        $(document).ready(function () {
+            $("#lightgallery").lightGallery();
+        });
+    </script>
+    {#KOD KOJI SE ODNOSI NA LIGHTGALLERY ----------------------------------------------#}
+
+    
+    
+    {# KOD KOJI SE KORISTI KOD UNITE GALLERY PLUGIN-A 0000000000000000000000000000000000000000000
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script src="{{ asset('js/unitegallery/unitegallery.min.js') }}"></script>
+    <script src="{{ asset('js/unitegallery/ug-theme-default.js') }}"></script>
+
+    <script type="text/javascript">
+        jQuery("#gallery").unitegallery();
+    </script>
+     KOD KOJI SE KORISTI KOD UNITE GALLERY PLUGIN-A 00000000000000000000000000000000000000000000#}
+    
+    
+
+   
+{% endblock %}

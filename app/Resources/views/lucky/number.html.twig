@@ -1,0 +1,26 @@
+{# app/Resources/views/lucky/number.html.twig #}
+{% extends 'base.html.twig' %}
+
+{#
+{% block body %}
+
+
+    {% for number in luckyNumberList %}
+    {{ number }}<br>  
+ {% endfor %}
+{% endblock %}
+#}
+
+{% block body %}
+    
+    {# {{ luckyNumberList[0] }} #}
+    
+    {% for exhibition in luckyNumberList %}
+        <p> {{exhibition.datetime1 | date('Y-m-d')}} </p> 
+        <p>{{ exhibition.name }}</p>
+        <p>{{ exhibition.description }}</p>
+    {% endfor %}    
+ 
+    
+{% endblock %}    
+

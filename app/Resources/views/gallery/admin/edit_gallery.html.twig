@@ -1,0 +1,69 @@
+{# empty Twig template #}
+{% extends 'gallery/admin/admin.html.twig' %}
+
+{% block third %}
+    <h3 style="margin: 20px; color: #ffffff;">Dodaj sliku u galeriju</h3>
+    <div style="margin: 20px" class="row"> 
+        <div class="col-lg-8">
+
+            <form style="border-style: groove; padding: 5px " class="form-horizontal" role="form" method='post'  enctype='multipart/form-data' >
+                <p style="color: #ffffff; margin: 4px"> {{ uploadMessage }} </p>
+                
+                    <input class="col-lg-offset-1 col-lg-10" style="color: #ffffff; margin: 4px" type='file' name='image-data' accept='image/jpeg' />
+                    <input style="margin: 4px" class="btn btn-default col-lg-offset-8" type='submit' name='new-image' value='upload' />
+             
+            </form>
+
+        </div>
+        <div class="col-lg-4">
+            <h1></h1>
+        </div>
+    </div>
+
+
+    <div class="row">        
+        <h3 style="margin: 20px; color: #ffffff" class="row">Izbrisi sliku iz galerije</h3>
+        
+        {#
+        <dl id='images'> 
+            {% for imagePath in imagesPaths %}
+                
+                
+                <dt>
+                    <img src="{{ asset(imagePath.imagePath1) }}" alt='picture'/>
+                </dt> 
+                <dd style="color: #ffffff">
+                    <form method='post' enctype='multipart/form-data' >
+                        Source: {{ asset(imagePath.imagePath1) }} <input type="hidden" value="{{ imagePath.imagePath2 }}" name="delete_file" />   
+                        <input type="submit" name='delete_image' value="Delete image" />
+                    </form>
+                </dd>
+                
+                
+            {% endfor %}
+        </dl>
+        #}
+        <div class="container" id='images'> 
+            {% for imagePath in imagesPaths %}
+                
+                <br>
+                <br>
+                <div>
+                    <img src="{{ asset(imagePath.imagePath1) }}" alt='picture'/>
+                </div> 
+                <div style="color: #ffffff">
+                    <form method='post' enctype='multipart/form-data' >
+                        Source: {{ asset(imagePath.imagePath1) }} <input type="hidden" value="{{ imagePath.imagePath2 }}" name="delete_file" />   
+                        <input type="submit" name='delete_image' value="Delete image" />
+                    </form>
+                </div>
+                 <br>
+                <br>
+                
+            {% endfor %}
+        </div>
+        
+    </div>
+{% endblock %}
+
+{# action='http://localhost/GalleryProjectV1/web/app_dev.php/admin/editgallery' #}

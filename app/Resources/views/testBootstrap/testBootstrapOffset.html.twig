@@ -1,0 +1,32 @@
+{# empty Twig template #}
+{% extends '/testBootstrap/testBootstrapBase.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    {# <h1 class="text-primary">Hello, world!</h1> #}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="customDiv">Column1</div>
+            </div>    
+            <div class="col-md-3 col-md-offset-6">
+                 <div class="customDiv">Column2</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="customDiv">Column1</div>
+            </div>    
+            <div class="col-md-3">
+                 <div class="customDiv">Column2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="customDiv">Column3</div>
+            </div>    
+            <div class="col-md-3">
+                 <div class="customDiv">Column4</div>
+            </div>
+        </div>
+    </div>    
+{% endblock %}    

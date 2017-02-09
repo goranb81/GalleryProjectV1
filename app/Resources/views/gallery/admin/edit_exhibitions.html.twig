@@ -1,0 +1,55 @@
+{# empty Twig template #}
+{% extends 'base.html.twig'%}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/styleTemplate.css') }}" />
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header"><h1 style="font-style: italic" class="style1 page-text">Admin panel</h1></div>     
+            </div>  
+        </div> 
+
+        <div class="row">
+            <div style="padding-top: 30px; padding-bottom: 15px" class="col-md-12">
+                {#
+                <ul style="margin-left:50px;" class="nav nav-pills style1 page-text">
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/admin/editexhibitions/addremoveexhibitions' class="page-text1"  >DODAJ/IZBRISI IZLOZBU</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/admin/editexhibitions/addremoveexhibitionimages' class="page-text1" >DODAVANJE/BRISANJE SLIKA</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/admin' class="page-text1" >ADMIN HOME</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/logout' class="page-text1" >LOGOUT</a></li>
+                </ul>
+                #}
+                 <ul style="margin-left:50px;" class="nav nav-pills style1 page-text">
+                    <li><a   href='/GalleryProjectV1/web/admin/editexhibitions/addremoveexhibitions' class="page-text1"  >DODAJ/IZBRISI IZLOZBU</a></li>
+                    <li><a   href='/GalleryProjectV1/web/admin/editexhibitions/addremoveexhibitionimages' class="page-text1" >DODAVANJE/BRISANJE SLIKA</a></li>
+                    <li><a   href='/GalleryProjectV1/web/admin' class="page-text1" >ADMIN HOME</a></li>
+                    <li><a   href='/GalleryProjectV1/web/logout' class="page-text1" >LOGOUT</a></li>
+                </ul>
+
+            </div>   
+        </div>
+
+        {% block third %}
+             <h2 class="page-text" style="text-align: center; margin: 200px">Izaberi jednu od ponudjenih opcija iz navigacionog bara.</h2>
+        {% endblock%}
+    </div>
+    
+    
+    {#
+    <div>
+        <nav  class="style1 page-text" style="margin-left:50px">    
+            <a href='http://localhost/GalleryProjectV1/web/app_dev.php/admin/editexhibitions/addremoveexhibitions' class="page-text1" >DODAJ/IZBRISI IZLOZBU</a>
+            <a href='http://localhost/GalleryProjectV1/web/app_dev.php/admin/editexhibitions/addremoveexhibitionimages' class="page-text1">DODAVANJE/BRISANJE SLIKA</a>
+            <a href='http://localhost/GalleryProjectV1/web/app_dev.php/admin' class="page-text1">ADMIN HOME</a>
+            <a href='http://localhost/GalleryProjectV1/web/app_dev.php/logout' class="page-text1">LOGOUT</a>
+        </nav>  
+    </div>
+    #}
+{% endblock %}
+

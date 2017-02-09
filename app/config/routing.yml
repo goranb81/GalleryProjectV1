@@ -1,0 +1,16 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    
+logout:
+    path:              /logout
+
+exhibitionajax:
+    path:              /exhibitionajax 
+    
+showcomment:
+    path:              /admin/showcomment
+    
+homepage:
+    pattern:   /
+    defaults:  { _controller: AppBundle:Home:home }

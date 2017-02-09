@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Exhibitions
+ *
+ * @ORM\Table(name="exhibitions")
+ * @ORM\Entity
+ */
+class Exhibitions
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datetime1", type="datetime", nullable=false)
+     */
+    private $datetime1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=200, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=65535, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

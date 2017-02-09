@@ -1,0 +1,73 @@
+{# empty Twig template #}
+
+{# template which extend all tamplate page: home, about, gallery, exhibitions, portrait, contakt #}
+{% extends 'base.html.twig'%}
+
+{% block title %}IVAN KOCIC ART!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    
+{% endblock %}
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header"><h1 style="font-style: italic" class="style1 page-text">IVAN KOCIC ART!</h1></div>
+                
+            </div>    
+        </div>
+        <div class="row">
+            <div style="padding-top: 30px" class="col-md-12">
+                {#
+                <ul style="margin-left:50px" class="nav nav-pills style1 page-text">
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/home' class="page-text1"  >POCETNA</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/about' class="page-text1" >O MENI</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/gallery/gallery' class="page-text1" >GALERIJA</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/exhibition' class="page-text1" >IZLOZBE</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/portrait' class="page-text1" >EMISIJA: POTRET SA IVANOM</a></li>
+                    <li><a   href='http://localhost/GalleryProjectV1/web/app_dev.php/contact' class="page-text1" >KONTAKT</a></li>
+                </ul>
+                #}
+                
+                <ul style="margin-left:50px" class="nav nav-pills style1 page-text">
+                    <li><a   href='/GalleryProjectV1/web/home' class="page-text1"  >POCETNA</a></li>
+                    <li><a   href='/GalleryProjectV1/web/about' class="page-text1" >O MENI</a></li>
+                    <li><a   href='/GalleryProjectV1/web/gallery/gallery' class="page-text1" >GALERIJA</a></li>
+                    <li><a   href='/GalleryProjectV1/web/exhibition' class="page-text1" >IZLOZBE</a></li>
+                    <li><a   href='/GalleryProjectV1/web/portrait' class="page-text1" >EMISIJA: POTRET SA IVANOM</a></li>
+                    <li><a   href='/GalleryProjectV1/web/contact' class="page-text1" >KONTAKT</a></li>
+                </ul>
+                
+               
+            </div>   
+        </div>
+
+
+        {% block third %}
+        {% endblock%}
+
+    </div>   
+
+    {#
+     <!-- title -->
+     <div>
+         <h1 class="style1 page-text">IVAN KOCIC ART!</h1>
+     </div>
+
+     <!-- navigation -->
+     <div>
+         <nav  class="style1 page-text" style="margin-left:50px">    
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/home' class="page-text1" >POCETNA</a>
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/about' class="page-text1" >O MENI</a>
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/gallery/gallery' class="page-text1">GALERIJA</a>
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/exhibition' class="page-text1">IZLOZBE</a>
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/portrait' class="page-text1">EMISIJA: POTRET SA IVANOM</a>
+             <a href='http://localhost/GalleryProjectV1/web/app_dev.php/contact' class="page-text1">KONTAKT</a>
+         </nav>  
+     </div> #}  
+
+
+{% endblock body %}
